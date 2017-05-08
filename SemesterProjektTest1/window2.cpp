@@ -43,6 +43,6 @@ END_MESSAGE_MAP()
 void window2::OnBnClickedOk()
 {
 	// TODO: Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
-	// just for documentation
+	// test test test
 	EndDialog(IDOK);
 }
