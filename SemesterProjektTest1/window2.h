@@ -11,7 +11,7 @@ public:
 	window2(CWnd* pParent = NULL);   // Standardkonstruktor
 	virtual ~window2();
 
-// Dialogfelddaten
+	// Dialogfelddaten
 #ifdef AFX_DESIGN_TIME
 	enum { IDD = IDD_WINDOW2 };
 #endif
@@ -22,4 +22,7 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedOk();
+	void OnSize(UINT nType, int cx, int cy);
+	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL & bHandled);
+	BOOL OnInitDialog();
 };
