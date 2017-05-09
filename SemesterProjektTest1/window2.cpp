@@ -6,6 +6,7 @@
 #include "window2.h"
 #include "afxdialogex.h"
 #include "atlwin.h"
+#include "d2d1effects.h"
 
 
 // window2-Dialogfeld
@@ -24,11 +25,15 @@ window2::~window2()
 void window2::DoDataExchange(CDataExchange* pDX)
 {
 }
+int window2::OnCreate(LPCREATESTRUCT lpCreateStruct) {
+	MessageBox("OnCreate", "OnCreate", TRUE);
+	ModifyStyle(WS_MINIMIZEBOX | WS_MAXIMIZEBOX, 0);
+	return 1;
+}
 
 BOOL window2::OnInitDialog() {
 	CDialog::OnInitDialog();
 	ShowWindow(SW_MAXIMIZE);
-	GetDlgItem(IDOK)->MoveWindow(700, 350, 50, 50);
 	GetDlgItem(IDC_STATIC)->SetWindowText("Anderer Text");
 	//OnSize(SW_MAXIMIZE, 10, 10);
 	return true;
@@ -38,6 +43,8 @@ BOOL window2::OnInitDialog() {
 BEGIN_MESSAGE_MAP(window2, CDialog)
 	ON_BN_CLICKED(IDOK, &OnBnClickedOk)
 	ON_WM_CLOSE()
+	ON_WM_SIZE()
+	ON_WM_CREATE()
 END_MESSAGE_MAP()
 
 
@@ -45,7 +52,8 @@ END_MESSAGE_MAP()
 
 
 void window2::OnBnClickedOk()
-{
+{	
+
 	EndDialog(IDOK);
 }
 
