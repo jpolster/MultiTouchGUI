@@ -23,6 +23,7 @@ protected:
 public:
 	afx_msg void OnBnClickedOk();
 	void OnSize(UINT nType, int cx, int cy);
+	void OnClose();
 	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL & bHandled);
 	BOOL OnInitDialog();
 };

@@ -26,14 +26,18 @@ void window2::DoDataExchange(CDataExchange* pDX)
 }
 
 BOOL window2::OnInitDialog() {
+	CDialog::OnInitDialog();
 	ShowWindow(SW_MAXIMIZE);
-	OnSize(SW_MAXIMIZE, 10, 10);
+	GetDlgItem(IDOK)->MoveWindow(700, 350, 50, 50);
+	GetDlgItem(IDC_STATIC)->SetWindowText("Anderer Text");
+	//OnSize(SW_MAXIMIZE, 10, 10);
 	return true;
 }
 
 
 BEGIN_MESSAGE_MAP(window2, CDialog)
 	ON_BN_CLICKED(IDOK, &OnBnClickedOk)
+	ON_WM_CLOSE()
 END_MESSAGE_MAP()
 
 
@@ -52,6 +56,7 @@ void window2::OnSize(UINT nType, int cx, int cy)
 	{
 	case SIZE_MAXIMIZED:
 		// window was maximized
+		GetDlgItem(IDOK)->MoveWindow(700, 350, 50, 50);
 		break;
 
 	case SIZE_MINIMIZED:
@@ -67,8 +72,9 @@ void window2::OnSize(UINT nType, int cx, int cy)
 		// you could also deal with SIZE_MAXHIDE and SIZE_MAXSHOW
 		// but rarely need to
 		break;
-	}
+	}	
+}
 
-	GetDlgItem(IDC_STATIC)->SetWindowText("Anderer Text");
-	GetDlgItem(IDOK)->MoveWindow(700, 350, 50, 50);
+void window2::OnClose() {
+	MessageBox("geht nicht", "geht nicht", 1);
 }
