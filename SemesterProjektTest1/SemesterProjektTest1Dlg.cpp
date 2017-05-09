@@ -1,4 +1,3 @@
-
 // SemesterProjektTest1Dlg.cpp: Implementierungsdatei
 //
 
@@ -104,3 +103,4 @@ void CSemesterProjektTest1Dlg::OnBnClickedButton1()
 	w.DoModal();
 }
 
+//Teeest-Kommentar von Jessi
