@@ -6,6 +6,9 @@
 #include "ModiAuswahl.h"
 #include "afxdialogex.h"
 #include <iostream>
+#include "Windows.h"
+#include "window2.h"
+#include "SemesterProjektTest1Dlg.h"
 
 
 // ModiAuswahl-Dialogfeld
@@ -58,8 +61,15 @@ void ModiAuswahl::OnBnClickedbuok()
 {
 	std::cout << "okbutClicked" << std::endl;
 	//CWnd::ShowWindow(SW_MINIMIZE);
-	UpdateData(TRUE);
-	if (rbModusV==2)
+	UpdateData(TRUE);  //Daten müssen vorher aktualisiert werden, falls man neuen RadioButton wählt
+	if (rbModusV==0)
 		MessageBeep(true);
+	if (rbModusV == 1)
+		MessageBeep(true);
+	if (rbModusV == 2) {
+		//window2 w;
+		CSemesterProjektTest1Dlg w;
+		w.DoModal();
+	}
 	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
 }

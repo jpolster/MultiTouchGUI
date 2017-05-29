@@ -100,7 +100,7 @@ void CSemesterProjektTest1Dlg::OnBnClickedButton1()
 			::ShowWindow(window, 3);
 		else
 			MessageBox("ACHTUNG", "CreateDialog returned NULL", true);*/
-	ModiAuswahl w;
+	window2 w;
 	w.DoModal();
 }
 
