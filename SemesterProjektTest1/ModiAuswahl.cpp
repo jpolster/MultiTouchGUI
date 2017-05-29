@@ -15,7 +15,7 @@ IMPLEMENT_DYNAMIC(ModiAuswahl, CDialog)
 
 
 ModiAuswahl::ModiAuswahl(CWnd* pParent /*=NULL*/)
-	: CDialog(modiWahl, pParent)
+	: CDialog(modiWahl, pParent), rbModusV(0)
 {
 
 }
@@ -24,26 +24,25 @@ ModiAuswahl::~ModiAuswahl()
 {
 }
 BOOL ModiAuswahl::OnInitDialog() {
-	/*CDialog::OnInitDialog();
+	CDialog::OnInitDialog();
 	CButton* pButton2;
 	pButton2 = (CButton*)this->GetDlgItem(rbOeffentlich);
 	pButton2->SetFocus();
-	pButton2->SetCheck(true);*/
-	//(CButton*)this->GetDlgItem(rbOeffentlich)->SetCheck(true);
-
+	pButton2->SetCheck(true);
 	return true;
 }
 
 void ModiAuswahl::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
-	DDX_Radio(pDX, rgModus, rbModusV);  // <<--- Note
+	DDX_Radio(pDX, rbOeffentlich, rbModusV);  // <<--- Note
+	
 	//ModiAuswahl dlg;
-	rbModusV = 1; // or 0,1, or 2
-	int nResp = this->DoModal();
-	if (nResp == rbOeffentlich) {
-		MessageBeep(true);
-	}
+	//rbModusV = 1; // or 0,1, or 2
+	//int nResp = this->DoModal();
+	//if (nResp == rbOeffentlich) {
+	//	MessageBeep(true);
+	//}
 }
 
 
@@ -58,7 +57,9 @@ END_MESSAGE_MAP()
 void ModiAuswahl::OnBnClickedbuok()
 {
 	std::cout << "okbutClicked" << std::endl;
-	CWnd::ShowWindow(SW_MINIMIZE);
-	MessageBeep(true);
+	//CWnd::ShowWindow(SW_MINIMIZE);
+	UpdateData(TRUE);
+	if (rbModusV==2)
+		MessageBeep(true);
 	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
 }

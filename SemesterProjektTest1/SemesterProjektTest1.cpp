@@ -75,7 +75,7 @@ BOOL CSemesterProjektTest1App::InitInstance()
 	//CSemesterProjektTest1Dlg dlg;
 	ModiAuswahl dlg;
 	m_pMainWnd = &dlg;
-	// = 0; // or 0,1, or 2
+	//dlg.rbModusV = 0; // or 0,1, or 2
 
 	INT_PTR nResponse = dlg.DoModal();
 

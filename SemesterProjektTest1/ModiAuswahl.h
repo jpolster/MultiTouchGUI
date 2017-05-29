@@ -2,13 +2,14 @@
 
 
 // ModiAuswahl-Dialogfeld
-public int rbModusV;
 
-class ModiAuswahl : public CDialog
+
+class ModiAuswahl : public CDialog 
 {
 	DECLARE_DYNAMIC(ModiAuswahl)
 
 public:
+	int rbModusV;
 	ModiAuswahl(CWnd* pParent = NULL);   // Standardkonstruktor
 	virtual ~ModiAuswahl();
 
