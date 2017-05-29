@@ -104,3 +104,5 @@ void CSemesterProjektTest1Dlg::OnBnClickedButton1()
 }
 
 //Teeest-Kommentar von Jessi
+
+//Test-Kommentar2 von Jessi
