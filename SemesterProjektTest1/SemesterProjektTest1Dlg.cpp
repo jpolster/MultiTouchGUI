@@ -7,6 +7,7 @@
 #include "afxdialogex.h"
 #include "Windows.h"
 #include "window2.h"
+#include "ModiAuswahl.h"
 
 
 #ifdef _DEBUG
@@ -99,7 +100,7 @@ void CSemesterProjektTest1Dlg::OnBnClickedButton1()
 			::ShowWindow(window, 3);
 		else
 			MessageBox("ACHTUNG", "CreateDialog returned NULL", true);*/
-	window2 w;
+	ModiAuswahl w;
 	w.DoModal();
 }
 

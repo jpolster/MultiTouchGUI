@@ -68,7 +68,7 @@ void window2::OnSize(UINT nType, int cx, int cy)
 		// but rarely need to
 		break;
 	}
-
-	GetDlgItem(IDC_STATIC)->SetWindowText("Anderer Text");
+// Hiiiiiiiiiiiiiiier
+	//GetDlgItem(IDC_STATIC)->SetWindowText("Anderer Text");
 	GetDlgItem(IDOK)->MoveWindow(700, 350, 50, 50);
 }

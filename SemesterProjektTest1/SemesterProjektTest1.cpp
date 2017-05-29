@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "SemesterProjektTest1.h"
 #include "SemesterProjektTest1Dlg.h"
+#include "ModiAuswahl.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -71,9 +72,13 @@ BOOL CSemesterProjektTest1App::InitInstance()
 	// z.B. zum Namen Ihrer Firma oder Organisation.
 	SetRegistryKey(_T("Vom lokalen Anwendungs-Assistenten generierte Anwendungen"));
 
-	CSemesterProjektTest1Dlg dlg;
+	//CSemesterProjektTest1Dlg dlg;
+	ModiAuswahl dlg;
 	m_pMainWnd = &dlg;
+	// = 0; // or 0,1, or 2
+
 	INT_PTR nResponse = dlg.DoModal();
+
 	if (nResponse == IDOK)
 	{
 		// TODO: Fügen Sie hier Code ein, um das Schließen des
