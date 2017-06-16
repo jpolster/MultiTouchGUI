@@ -9,6 +9,7 @@
 #include "Windows.h"
 #include "window2.h"
 #include "SemesterProjektTest1Dlg.h"
+#include "HalbSicherDlg.h"
 
 
 // ModiAuswahl-Dialogfeld
@@ -62,10 +63,12 @@ void ModiAuswahl::OnBnClickedbuok()
 	std::cout << "okbutClicked" << std::endl;
 	//CWnd::ShowWindow(SW_MINIMIZE);
 	UpdateData(TRUE);  //Daten müssen vorher aktualisiert werden, falls man neuen RadioButton wählt
-	if (rbModusV==0)
-		MessageBeep(true);
-	if (rbModusV == 1)
-		MessageBeep(true);
+	if (rbModusV == 0)
+		OnCancel();
+	if (rbModusV == 1) {
+		HalbSicherDlg hs;
+		hs.DoModal();
+	}
 	if (rbModusV == 2) {
 		//window2 w;
 		CSemesterProjektTest1Dlg w;

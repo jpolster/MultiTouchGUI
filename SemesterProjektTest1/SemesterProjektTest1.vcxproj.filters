@@ -39,6 +39,9 @@
     <ClInclude Include="ModiAuswahl.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="HalbSicherDlg.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SemesterProjektTest1.cpp">
@@ -54,6 +57,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="ModiAuswahl.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HalbSicherDlg.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
