@@ -23,6 +23,7 @@ window2::~window2()
 
 void window2::DoDataExchange(CDataExchange* pDX)
 {
+	
 }
 
 BOOL window2::OnInitDialog() {

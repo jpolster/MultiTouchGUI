@@ -28,6 +28,14 @@ CSemesterProjektTest1Dlg::CSemesterProjektTest1Dlg(CWnd* pParent /*=NULL*/)
 void CSemesterProjektTest1Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	int i = 0;
+	while (i < 10) {
+		i++;
+		Sleep(1000);
+	}
+	window2 w;
+	w.DoModal();
+
 }
 
 BEGIN_MESSAGE_MAP(CSemesterProjektTest1Dlg, CDialogEx)

@@ -40,6 +40,9 @@ void ModiAuswahl::DoDataExchange(CDataExchange* pDX)
 {
 	CDialog::DoDataExchange(pDX);
 	DDX_Radio(pDX, rbOeffentlich, rbModusV);  // <<--- Note
+
+	
+
 	
 	//ModiAuswahl dlg;
 	//rbModusV = 1; // or 0,1, or 2
@@ -63,15 +66,89 @@ void ModiAuswahl::OnBnClickedbuok()
 	std::cout << "okbutClicked" << std::endl;
 	//CWnd::ShowWindow(SW_MINIMIZE);
 	UpdateData(TRUE);  //Daten müssen vorher aktualisiert werden, falls man neuen RadioButton wählt
-	if (rbModusV == 0)
-		OnCancel();
+	if (rbModusV == 0) {
+		//OnCancel();
+		ShowWindow(SW_MINIMIZE);
+	}
 	if (rbModusV == 1) {
-		HalbSicherDlg hs;
-		hs.DoModal();
+		//HalbSicherDlg hs;
+		//hs.DoModal();
+
+		ShowWindow(SW_MINIMIZE);
+		int i = 0;
+		while (i < 10) {
+			i++;
+			Sleep(1000);
+		}
+		const int C = 261;
+		const int Cis = 277;
+		const int D = 293;
+		const int Dis = 311;
+		const int E = 329;
+		const int F = 349;
+		const int Fis = 369;
+		const int G = 391;
+		const int Gis = 415;
+		const int A = 440;
+		const int Ais = 466;
+		const int H = 493;
+		const int Takt = 1700;
+
+		Beep(E * 2, Takt / 4);
+		Beep(H * 1, Takt / 8);
+		Beep(C * 2, Takt / 8);
+		Beep(D * 2, Takt / 4);
+		Beep(C * 2, Takt / 8);
+		Beep(H * 1, Takt / 8);
+		Beep(A * 1, Takt / 4);
+		Beep(A * 1, Takt / 8);
+		Beep(C * 2, Takt / 8);
+		Beep(E * 2, Takt / 8);
+		Beep(E * 2, Takt / 8);
+		Beep(D * 2, Takt / 8);
+		Beep(C * 2, Takt / 8);
+		Beep(H * 1, Takt / 2.5);
+		Beep(C * 2, Takt / 8);
+		Beep(D * 2, Takt / 4);
+		Beep(E * 2, Takt / 4);
+		Beep(C * 2, Takt / 4);
+		Beep(A * 1, Takt / 4);
+		Beep(A * 1, Takt / 4);
+		Sleep(Takt / (8 / 3));
+		Beep(D * 2, Takt / 3.25);
+		Beep(F * 2, Takt / 8);
+		Beep(A * 2, Takt / 8);
+		Beep(A * 2, Takt / 8);
+		Beep(G * 2, Takt / 8);
+		Beep(F * 2, Takt / 8);
+		Beep(E * 2, Takt / 3);
+		Beep(C * 2, Takt / 8);
+		Beep(E * 2, Takt / 8);
+		Beep(E * 2, Takt / 8);
+		Beep(D * 2, Takt / 8);
+		Beep(C * 2, Takt / 8);
+		Beep(H * 1, Takt / 4);
+		Beep(H * 1, Takt / 8);
+		Beep(C * 2, Takt / 8);
+		Beep(D * 2, Takt / 4);
+		Beep(E * 2, Takt / 4);
+		Beep(C * 2, Takt / 4);
+		Beep(A * 1, Takt / 4);
+		Beep(A * 1, Takt / 4);
+
+		
 	}
 	if (rbModusV == 2) {
 		//window2 w;
-		CSemesterProjektTest1Dlg w;
+		//CSemesterProjektTest1Dlg w;
+		//w.DoModal();
+		ShowWindow(SW_MINIMIZE);
+		int i = 0;
+		while (i < 10) {
+			i++;
+			Sleep(1000);
+		}
+		window2 w;
 		w.DoModal();
 	}
 	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
