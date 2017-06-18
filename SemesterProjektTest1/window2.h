@@ -25,4 +25,5 @@ public:
 	void OnSize(UINT nType, int cx, int cy);
 	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL & bHandled);
 	BOOL OnInitDialog();
+	afx_msg void OnBnClickedButton1();
 };

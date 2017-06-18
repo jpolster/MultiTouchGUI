@@ -6,6 +6,7 @@
 #include "window2.h"
 #include "afxdialogex.h"
 #include "atlwin.h"
+#include "Windows.h"
 
 
 // window2-Dialogfeld
@@ -29,12 +30,14 @@ void window2::DoDataExchange(CDataExchange* pDX)
 BOOL window2::OnInitDialog() {
 	ShowWindow(SW_MAXIMIZE);
 	OnSize(SW_MAXIMIZE, 10, 10);
+
 	return true;
 }
 
 
 BEGIN_MESSAGE_MAP(window2, CDialog)
 	ON_BN_CLICKED(IDOK, &OnBnClickedOk)
+	ON_BN_CLICKED(IDC_BUTTON1, &window2::OnBnClickedButton1)
 END_MESSAGE_MAP()
 
 
@@ -72,4 +75,23 @@ void window2::OnSize(UINT nType, int cx, int cy)
 // Hiiiiiiiiiiiiiiier
 	//GetDlgItem(IDC_STATIC)->SetWindowText("Anderer Text");
 	GetDlgItem(IDOK)->MoveWindow(700, 350, 50, 50);
+}
+
+
+void window2::OnBnClickedButton1()
+{	
+	char * buffer = NULL;
+	//open the clipboard
+	CString fromClipboard(L"EMPTY");
+	if (OpenClipboard())
+	{
+		HANDLE hData = GetClipboardData(CF_TEXT);
+		char * buffer = (char*)GlobalLock(hData);
+		fromClipboard = buffer;
+		GlobalUnlock(hData);
+		CloseClipboard();
+	}
+	CWnd* button1 = GetDlgItem(IDC_BUTTON1);
+	button1->SetWindowTextW(fromClipboard);
+	// TODO: Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
 }
