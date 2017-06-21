@@ -7,6 +7,7 @@
 #include "afxdialogex.h"
 #include "atlwin.h"
 #include "Windows.h"
+#include <iostream>
 
 
 // window2-Dialogfeld
@@ -90,6 +91,10 @@ void window2::OnBnClickedButton1()
 		fromClipboard = buffer;
 		GlobalUnlock(hData);
 		CloseClipboard();
+	}
+	int x = _ttoi(fromClipboard);
+	if (x == 1) {
+		MessageBox(L"WORKING", L"WORKING", 1);
 	}
 	CWnd* button1 = GetDlgItem(IDC_BUTTON1);
 	button1->SetWindowTextW(fromClipboard);
