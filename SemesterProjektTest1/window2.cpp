@@ -7,11 +7,12 @@
 #include "afxdialogex.h"
 #include "atlwin.h"
 #include "Windows.h"
+#include <iostream>
 
 
 // window2-Dialogfeld
 
-CStatic * bitMap;
+//CStatic * bitMap;
 
 
 IMPLEMENT_DYNAMIC(window2, CDialogEx)
@@ -19,7 +20,7 @@ IMPLEMENT_DYNAMIC(window2, CDialogEx)
 window2::window2(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_WINDOW2, pParent)
 {
-	this->SetBackgroundColor(50, 1);
+	//this->SetBackgroundColor(50, 1);
 }
 
 window2::~window2()
@@ -99,7 +100,7 @@ void window2::OnPaint()
 	//dc.BitBlt(
 	//	0, 0, bm.bmWidth, bm.bmHeight, &speicherDC, 0, 0, SRCCOPY);
 
-	CBitmap bitmap;
+	/*CBitmap bitmap;
 	bitmap.LoadBitmap(BackgroundPicID);
 
 	BITMAP bm;
@@ -113,7 +114,7 @@ void window2::OnPaint()
 	CBitmap *pOldBitmap = speicherDC.SelectObject(&bitmap);
 	dc.BitBlt(0, 0, bm.bmWidth, bm.bmHeight, &speicherDC, 0, 0, SRCCOPY);
 
-	speicherDC.SelectObject(pOldBitmap);
+	speicherDC.SelectObject(pOldBitmap);*/
 
 }
 
@@ -163,6 +164,7 @@ void window2::OnSize(UINT nType, int cx, int cy)
 
 void window2::OnBnClickedButton1()
 {	
+	int gesichter = 0;
 	char * buffer = NULL;
 	//open the clipboard
 	CString fromClipboard(L"EMPTY");
@@ -173,8 +175,10 @@ void window2::OnBnClickedButton1()
 		fromClipboard = buffer;
 		GlobalUnlock(hData);
 		CloseClipboard();
+		gesichter = atoi(buffer);
 	}
 	CWnd* button1 = GetDlgItem(IDC_BUTTON1);
+	std::cout << "Gesichter: " << gesichter << std::endl;
 	button1->SetWindowTextW(fromClipboard);
 	// TODO: Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
 }
