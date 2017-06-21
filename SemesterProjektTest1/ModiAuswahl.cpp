@@ -76,7 +76,7 @@ void ModiAuswahl::OnBnClickedbuok()
 
 		ShowWindow(SW_MINIMIZE);
 		int i = 0;
-		while (i < 10) {
+		while (i < 4) {
 			i++;
 			Sleep(1000);
 		}
@@ -144,7 +144,7 @@ void ModiAuswahl::OnBnClickedbuok()
 		//w.DoModal();
 		ShowWindow(SW_MINIMIZE);
 		int i = 0;
-		while (i < 10) {
+		while (i < 4) {
 			i++;
 			Sleep(1000);
 		}

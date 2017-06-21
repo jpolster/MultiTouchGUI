@@ -77,5 +77,8 @@
     <Image Include="res\SemesterProjektTest1.ico">
       <Filter>Ressourcendateien</Filter>
     </Image>
+    <Image Include="res\bitmap1.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
   </ItemGroup>
 </Project>
