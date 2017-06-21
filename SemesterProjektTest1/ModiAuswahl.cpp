@@ -72,17 +72,7 @@ void ModiAuswahl::OnBnClickedbuok()
 	//open the clipboard
 	CString fromClipboard(L"EMPTY");
 	
-	if (OpenClipboard())
-	{
-		HANDLE hData = GetClipboardData(CF_TEXT);
-		
-		char * buffer = (char*)GlobalLock(hData);
-		fromClipboard = buffer;
-		GlobalUnlock(hData);
-		CloseClipboard();
-		gesichter = atoi(buffer);
-		
-	}
+	
 	
 	
 	if (rbModusV == 0) {
@@ -94,11 +84,27 @@ void ModiAuswahl::OnBnClickedbuok()
 		//hs.DoModal();
 
 		ShowWindow(SW_MINIMIZE);
-		int i = 0;
+		/*int i = 0;
 		while (i < 4) {
 			i++;
 			Sleep(1000);
+		}*/
+
+
+		while (gesichter <= gesichterBerechtigt) {
+			if (OpenClipboard())
+			{
+				HANDLE hData = GetClipboardData(CF_TEXT);
+
+				char * buffer = (char*)GlobalLock(hData);
+				fromClipboard = buffer;
+				GlobalUnlock(hData);
+				CloseClipboard();
+				gesichter = atoi(buffer);
+
+			}
 		}
+		
 		const int C = 261;
 		const int Cis = 277;
 		const int D = 293;
@@ -168,7 +174,17 @@ void ModiAuswahl::OnBnClickedbuok()
 			Sleep(1000);
 		}*/
 		while (gesichter <= gesichterBerechtigt) {
+			if (OpenClipboard())
+			{
+				HANDLE hData = GetClipboardData(CF_TEXT);
 
+				char * buffer = (char*)GlobalLock(hData);
+				fromClipboard = buffer;
+				GlobalUnlock(hData);
+				CloseClipboard();
+				gesichter = atoi(buffer);
+
+			}
 		}
 		window2 w;
 		w.DoModal();
