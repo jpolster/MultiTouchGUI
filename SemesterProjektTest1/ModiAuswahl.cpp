@@ -16,12 +16,12 @@
 //int rbModusV;
 IMPLEMENT_DYNAMIC(ModiAuswahl, CDialog)
 
-
+int gesichterBerechtigt = 1;
 
 ModiAuswahl::ModiAuswahl(CWnd* pParent /*=NULL*/)
 	: CDialog(modiWahl, pParent), rbModusV(0)
 {
-
+	std::cout << "KonstruktorTest" << std::endl;
 }
 
 ModiAuswahl::~ModiAuswahl()
@@ -63,9 +63,28 @@ END_MESSAGE_MAP()
 
 void ModiAuswahl::OnBnClickedbuok()
 {
+	
+	int gesichter=0;
 	std::cout << "okbutClicked" << std::endl;
 	//CWnd::ShowWindow(SW_MINIMIZE);
 	UpdateData(TRUE);  //Daten müssen vorher aktualisiert werden, falls man neuen RadioButton wählt
+	char * buffer = NULL;
+	//open the clipboard
+	CString fromClipboard(L"EMPTY");
+	
+	if (OpenClipboard())
+	{
+		HANDLE hData = GetClipboardData(CF_TEXT);
+		
+		char * buffer = (char*)GlobalLock(hData);
+		fromClipboard = buffer;
+		GlobalUnlock(hData);
+		CloseClipboard();
+		gesichter = atoi(buffer);
+		
+	}
+	
+	
 	if (rbModusV == 0) {
 		//OnCancel();
 		ShowWindow(SW_MINIMIZE);
@@ -76,7 +95,7 @@ void ModiAuswahl::OnBnClickedbuok()
 
 		ShowWindow(SW_MINIMIZE);
 		int i = 0;
-		while (i < 10) {
+		while (i < 4) {
 			i++;
 			Sleep(1000);
 		}
@@ -143,10 +162,13 @@ void ModiAuswahl::OnBnClickedbuok()
 		//CSemesterProjektTest1Dlg w;
 		//w.DoModal();
 		ShowWindow(SW_MINIMIZE);
-		int i = 0;
-		while (i < 10) {
+		/*int i = 0;
+		while (i < 4) {
 			i++;
 			Sleep(1000);
+		}*/
+		while (gesichter <= gesichterBerechtigt) {
+
 		}
 		window2 w;
 		w.DoModal();
