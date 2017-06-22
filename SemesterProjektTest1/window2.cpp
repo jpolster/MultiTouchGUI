@@ -13,6 +13,7 @@
 // window2-Dialogfeld
 
 //CStatic * bitMap;
+CBitmap bmp;
 
 
 IMPLEMENT_DYNAMIC(window2, CDialogEx)
@@ -33,6 +34,8 @@ void window2::DoDataExchange(CDataExchange* pDX)
 }
 
 BOOL window2::OnInitDialog() {
+
+	myBitMap.LoadBitmap(BackgroundPicID);
 	
 	/*HBITMAP hImage = (HBITMAP)LoadImage(NULL, L"bitmap1.bmp", IMAGE_BITMAP, 0, 0, LR_LOADFROMFILE);
 	HWND hImageView = CreateWindowEx(NULL, L"STATIC", NULL, SS_BITMAP | WS_VISIBLE | WS_CHILD, 0, 00, 500, 600, hWnd, (HMENU)IMAGE_VIEW, GetModuleHandle(NULL), NULL);
@@ -52,6 +55,18 @@ BOOL window2::OnInitDialog() {
 
 void window2::OnPaint()
 {
+	CClientDC dc(this);
+	BITMAP bm;
+	bmp.GetObject(sizeof(bm), &bm);
+	CDC SpeicherDC;
+	SpeicherDC.CreateCompatibleDC(&dc);
+	SpeicherDC.SelectObject(&bmp);
+	CRect Rect;
+	GetClientRect(&Rect);
+	dc.SetStretchBltMode(HALFTONE);
+	dc.StretchBlt(0, 0, Rect.right, Rect.bottom, &SpeicherDC,
+		0, 0, bm.bmWidth, bm.bmHeight, SRCCOPY);
+	CDialog::OnPaint();
 	//if (IsIconic())
 	//{
 	//	CPaintDC dc(this); // device context for painting

@@ -10,6 +10,7 @@
 #include "window2.h"
 #include "SemesterProjektTest1Dlg.h"
 #include "HalbSicherDlg.h"
+#include "OverlayDlg.h"
 
 
 // ModiAuswahl-Dialogfeld
@@ -63,15 +64,17 @@ END_MESSAGE_MAP()
 
 void ModiAuswahl::OnBnClickedbuok()
 {
-	
-	int gesichter=0;
-	std::cout << "okbutClicked" << std::endl;
-	//CWnd::ShowWindow(SW_MINIMIZE);
-	UpdateData(TRUE);  //Daten müssen vorher aktualisiert werden, falls man neuen RadioButton wählt
+	int gesichter = 0;
+
 	char * buffer = NULL;
 	//open the clipboard
 	CString fromClipboard(L"EMPTY");
 	
+	
+	std::cout << "okbutClicked" << std::endl;
+	//CWnd::ShowWindow(SW_MINIMIZE);
+	
+	UpdateData(TRUE);  //Daten müssen vorher aktualisiert werden, falls man neuen RadioButton wählt
 	
 	
 	
@@ -185,9 +188,13 @@ void ModiAuswahl::OnBnClickedbuok()
 				gesichter = atoi(buffer);
 
 			}
+			Sleep(3000);
 		}
 		window2 w;
 		w.DoModal();
+		/*OverlayDlg o;
+		o.DoModal();*/
+
 	}
 	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
 

@@ -28,4 +28,6 @@ public:
 	afx_msg void OnBnClickedButton1();
 	void OnPaint();
 	afx_msg void OnStnClickedBackbit();
+private:
+	CBitmap myBitMap;
 };
