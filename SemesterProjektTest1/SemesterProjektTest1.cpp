@@ -14,6 +14,8 @@
 
 // CSemesterProjektTest1App
 
+int CSemesterProjektTest1App::gesicherBerechtigt;
+
 BEGIN_MESSAGE_MAP(CSemesterProjektTest1App, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
@@ -25,7 +27,6 @@ CSemesterProjektTest1App::CSemesterProjektTest1App()
 {
 	// Neustart-Manager unterstützen
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
-
 	// TODO: Hier Code zur Konstruktion einfügen
 	// Alle wichtigen Initialisierungen in InitInstance positionieren
 }
@@ -39,7 +40,8 @@ CSemesterProjektTest1App theApp;
 // CSemesterProjektTest1App-Initialisierung
 
 BOOL CSemesterProjektTest1App::InitInstance()
-{
+{	
+	gesicherBerechtigt = 0;
 	AfxOleInit();
 	// InitCommonControlsEx() ist für Windows XP erforderlich, wenn ein Anwendungsmanifest
 	// die Verwendung von ComCtl32.dll Version 6 oder höher zum Aktivieren

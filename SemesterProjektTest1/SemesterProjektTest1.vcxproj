@@ -191,6 +191,7 @@
     <ClInclude Include="ModiAuswahl.h" />
     <ClInclude Include="OverlayDlg.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SecureOverlay.h" />
     <ClInclude Include="SemesterProjektTest1.h" />
     <ClInclude Include="SemesterProjektTest1Dlg.h" />
     <ClInclude Include="stdafx.h" />
@@ -201,6 +202,7 @@
     <ClCompile Include="HalbSicherDlg.cpp" />
     <ClCompile Include="ModiAuswahl.cpp" />
     <ClCompile Include="OverlayDlg.cpp" />
+    <ClCompile Include="SecureOverlay.cpp" />
     <ClCompile Include="SemesterProjektTest1.cpp" />
     <ClCompile Include="SemesterProjektTest1Dlg.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -221,7 +223,7 @@
     <Image Include="res\bitmap1.bmp" />
     <Image Include="res\bitmap2.bmp" />
     <Image Include="res\bitmap3.bmp" />
-    <Image Include="res\bmp00001.bmp" />
+    <Image Include="res\bmp01.bmp" />
     <Image Include="res\bmp00002.bmp" />
     <Image Include="res\bmpRot.bmp" />
     <Image Include="res\SemesterProjektTest1.ico" />

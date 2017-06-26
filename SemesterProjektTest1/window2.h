@@ -2,12 +2,14 @@
 
 
 // window2-Dialogfeld
+#include "SecureOverlay.h"
 
 class window2 : public CDialogEx
 {
 	DECLARE_DYNAMIC(window2)
 
 public:
+	CSecureOverlay objSecureOverlay;
 	window2(CWnd* pParent = NULL);   // Standardkonstruktor
 	virtual ~window2();
 
@@ -21,13 +23,13 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnBnClickedOk();
+	void OnBnClickedBack();
 	void OnSize(UINT nType, int cx, int cy);
-	LRESULT OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL & bHandled);
 	BOOL OnInitDialog();
-	afx_msg void OnBnClickedButton1();
 	void OnPaint();
-	afx_msg void OnStnClickedBackbit();
+	afx_msg void OnBnClickedOk();
+	HBRUSH OnCtlColor(CDC * pDC, CWnd * pWnd, UINT nCtlColor);
+	//HBRUSH CtlColor(CDC * pDC, UINT nCtlColor);
 private:
-	CBitmap myBitMap;
+	CBitmap myBitMap;	
 };

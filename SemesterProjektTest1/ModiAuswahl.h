@@ -2,7 +2,7 @@
 
 
 // ModiAuswahl-Dialogfeld
-
+#include "SecureOverlay.h"
 
 class ModiAuswahl : public CDialog 
 {

@@ -19,6 +19,7 @@ class CSemesterProjektTest1App : public CWinApp
 {
 public:
 	CSemesterProjektTest1App();
+	static int gesicherBerechtigt;
 
 // Überschreibungen
 public:

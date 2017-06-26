@@ -45,6 +45,9 @@
     <ClInclude Include="OverlayDlg.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="SecureOverlay.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SemesterProjektTest1.cpp">
@@ -68,6 +71,9 @@
     <ClCompile Include="OverlayDlg.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="SecureOverlay.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SemesterProjektTest1.rc">
@@ -86,9 +92,6 @@
     <Image Include="res\bitmap1.bmp">
       <Filter>Ressourcendateien</Filter>
     </Image>
-    <Image Include="res\bmp00001.bmp">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
     <Image Include="res\bitmap2.bmp">
       <Filter>Ressourcendateien</Filter>
     </Image>
@@ -99,6 +102,9 @@
       <Filter>Ressourcendateien</Filter>
     </Image>
     <Image Include="res\bmpRot.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="res\bmp01.bmp">
       <Filter>Ressourcendateien</Filter>
     </Image>
   </ItemGroup>

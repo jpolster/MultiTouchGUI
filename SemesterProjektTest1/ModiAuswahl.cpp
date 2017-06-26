@@ -11,13 +11,14 @@
 #include "SemesterProjektTest1Dlg.h"
 #include "HalbSicherDlg.h"
 #include "OverlayDlg.h"
+#include <fstream>
 
 
 // ModiAuswahl-Dialogfeld
 //int rbModusV;
 IMPLEMENT_DYNAMIC(ModiAuswahl, CDialog)
 
-int gesichterBerechtigt = 1;
+
 
 ModiAuswahl::ModiAuswahl(CWnd* pParent /*=NULL*/)
 	: CDialog(modiWahl, pParent), rbModusV(0)
@@ -38,12 +39,9 @@ BOOL ModiAuswahl::OnInitDialog() {
 }
 
 void ModiAuswahl::DoDataExchange(CDataExchange* pDX)
-{
+{	
 	CDialog::DoDataExchange(pDX);
 	DDX_Radio(pDX, rbOeffentlich, rbModusV);  // <<--- Note
-
-	
-
 	
 	//ModiAuswahl dlg;
 	//rbModusV = 1; // or 0,1, or 2
@@ -64,7 +62,7 @@ END_MESSAGE_MAP()
 
 void ModiAuswahl::OnBnClickedbuok()
 {
-	int gesichter = 0;
+	int gesichter = 1;
 
 	char * buffer = NULL;
 	//open the clipboard
@@ -83,18 +81,9 @@ void ModiAuswahl::OnBnClickedbuok()
 		ShowWindow(SW_MINIMIZE);
 	}
 	if (rbModusV == 1) {
-		//HalbSicherDlg hs;
-		//hs.DoModal();
 
 		ShowWindow(SW_MINIMIZE);
-		/*int i = 0;
-		while (i < 4) {
-			i++;
-			Sleep(1000);
-		}*/
-
-
-		while (gesichter <= gesichterBerechtigt) {
+		/*while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
 			if (OpenClipboard())
 			{
 				HANDLE hData = GetClipboardData(CF_TEXT);
@@ -104,9 +93,9 @@ void ModiAuswahl::OnBnClickedbuok()
 				GlobalUnlock(hData);
 				CloseClipboard();
 				gesichter = atoi(buffer);
-
 			}
-		}
+			
+		}*/
 		
 		const int C = 261;
 		const int Cis = 277;
@@ -176,28 +165,16 @@ void ModiAuswahl::OnBnClickedbuok()
 			i++;
 			Sleep(1000);
 		}*/
-		while (gesichter <= gesichterBerechtigt) {
-			if (OpenClipboard())
+		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
+
+			std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
+			int a;
+			while (myfile >> a)
 			{
-				HANDLE hData = GetClipboardData(CF_TEXT);
-
-				char * buffer = (char*)GlobalLock(hData);
-				fromClipboard = buffer;
-				GlobalUnlock(hData);
-				CloseClipboard();
-				gesichter = atoi(buffer);
-
+				gesichter = a;
 			}
-			Sleep(3000);
 		}
 		window2 w;
 		w.DoModal();
-		/*OverlayDlg o;
-		o.DoModal();*/
-
 	}
-	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
-
-
-	//Test Kommentar Jessi
 }
