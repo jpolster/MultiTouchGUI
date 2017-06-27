@@ -62,7 +62,7 @@ END_MESSAGE_MAP()
 
 void ModiAuswahl::OnBnClickedbuok()
 {
-	int gesichter = 1;
+	int gesichter = 0;
 
 	char * buffer = NULL;
 	//open the clipboard
@@ -96,6 +96,20 @@ void ModiAuswahl::OnBnClickedbuok()
 			}
 			
 		}*/
+
+		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
+
+			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
+			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			
+			int a;
+			/*while (myfile >> a)
+			{
+				gesichter = a;
+			}*/
+
+			myfile >> gesichter;
+		}
 		
 		const int C = 261;
 		const int Cis = 277;
@@ -167,12 +181,14 @@ void ModiAuswahl::OnBnClickedbuok()
 		}*/
 		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
 
-			std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
+			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
+			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			int a;
-			while (myfile >> a)
+			/*while (myfile >> a)
 			{
 				gesichter = a;
-			}
+			}*/
+			myfile >> gesichter;
 		}
 		window2 w;
 		w.DoModal();
