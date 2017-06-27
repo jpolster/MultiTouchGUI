@@ -41,7 +41,7 @@ CSemesterProjektTest1App theApp;
 
 BOOL CSemesterProjektTest1App::InitInstance()
 {	
-	gesicherBerechtigt = 1;
+	gesicherBerechtigt = 0;
 	AfxOleInit();
 	// InitCommonControlsEx() ist für Windows XP erforderlich, wenn ein Anwendungsmanifest
 	// die Verwendung von ComCtl32.dll Version 6 oder höher zum Aktivieren
