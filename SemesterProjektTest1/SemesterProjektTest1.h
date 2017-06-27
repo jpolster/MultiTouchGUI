@@ -9,6 +9,7 @@
 #endif
 
 #include "resource.h"		// Hauptsymbole
+#include "ModiAuswahl.h"
 
 
 // CSemesterProjektTest1App:
@@ -20,6 +21,7 @@ class CSemesterProjektTest1App : public CWinApp
 public:
 	CSemesterProjektTest1App();
 	static int gesicherBerechtigt;
+	static ModiAuswahl dlg;
 
 // Überschreibungen
 public:

@@ -57,6 +57,8 @@ END_MESSAGE_MAP()
 void window2::OnBnClickedBack()
 {	
 	EndDialog(IDBACK);
+	//CSemesterProjektTest1App::dlg.ShowWindow;
+	
 }
 
 

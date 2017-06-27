@@ -16,6 +16,9 @@
 
 int CSemesterProjektTest1App::gesicherBerechtigt;
 
+//CSemesterProjektTest1Dlg dlg;
+ModiAuswahl CSemesterProjektTest1App::dlg;
+
 BEGIN_MESSAGE_MAP(CSemesterProjektTest1App, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
@@ -41,7 +44,7 @@ CSemesterProjektTest1App theApp;
 
 BOOL CSemesterProjektTest1App::InitInstance()
 {	
-	gesicherBerechtigt = 1;
+	gesicherBerechtigt = 0;
 	AfxOleInit();
 	// InitCommonControlsEx() ist für Windows XP erforderlich, wenn ein Anwendungsmanifest
 	// die Verwendung von ComCtl32.dll Version 6 oder höher zum Aktivieren
@@ -74,8 +77,7 @@ BOOL CSemesterProjektTest1App::InitInstance()
 	// z.B. zum Namen Ihrer Firma oder Organisation.
 	SetRegistryKey(_T("Vom lokalen Anwendungs-Assistenten generierte Anwendungen"));
 
-	//CSemesterProjektTest1Dlg dlg;
-	ModiAuswahl dlg;
+	
 	m_pMainWnd = &dlg;
 	//dlg.rbModusV = 0; // or 0,1, or 2
 	
