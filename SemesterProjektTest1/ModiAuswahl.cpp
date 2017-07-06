@@ -62,6 +62,7 @@ END_MESSAGE_MAP()
 
 void ModiAuswahl::OnBnClickedbuok()
 {
+	bool tastegedrueckt = false;
 	int gesichter = 0;
 
 	char * buffer = NULL;
@@ -80,7 +81,7 @@ void ModiAuswahl::OnBnClickedbuok()
 		//OnCancel();
 		ShowWindow(SW_MINIMIZE);
 	}
-	if (rbModusV == 1) {
+	while (rbModusV == 1) {
 
 		ShowWindow(SW_MINIMIZE);
 		/*while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
@@ -94,14 +95,14 @@ void ModiAuswahl::OnBnClickedbuok()
 				CloseClipboard();
 				gesichter = atoi(buffer);
 			}
-			
+
 		}*/
 
 		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
 
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
 			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
-			
+
 			int a;
 			/*while (myfile >> a)
 			{
@@ -109,9 +110,20 @@ void ModiAuswahl::OnBnClickedbuok()
 			}*/
 
 			myfile >> gesichter;
+			if (GetAsyncKeyState(VK_F7) & 0x8000) {
+				
+				rbModusV = 0;
+				tastegedrueckt = true;
+				break;
+			}
+
+		}
+		if (!tastegedrueckt) {
+			PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
+			CSemesterProjektTest1App::gesicherBerechtigt++;
 		}
 		
-		const int C = 261;
+	/*	const int C = 261;
 		const int Cis = 277;
 		const int D = 293;
 		const int Dis = 311;
@@ -166,7 +178,7 @@ void ModiAuswahl::OnBnClickedbuok()
 		Beep(C * 2, Takt / 4);
 		Beep(A * 1, Takt / 4);
 		Beep(A * 1, Takt / 4);
-
+*/
 		
 	}
 	if (rbModusV == 2) {
@@ -184,17 +196,25 @@ void ModiAuswahl::OnBnClickedbuok()
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
 			
 			
-			std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			//std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
-			//std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			int a;
 			/*while (myfile >> a)
 			{
 				gesichter = a;
 			}*/
 			myfile >> gesichter;
+			if (GetAsyncKeyState(VK_F7) & 0x8000) {
+				
+				rbModusV = 0;
+				tastegedrueckt = true;
+				break;
+			}
 		}
-		window2 w;
-		w.DoModal();
+		if (!tastegedrueckt) {
+			window2 w;
+			w.DoModal();
+		}
 	}
 }

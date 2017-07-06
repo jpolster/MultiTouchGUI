@@ -22,6 +22,8 @@
 
 #include <afxdisp.h>        // MFC-Automatisierungsklassen
 
+#include <mmsystem.h>  //Musik
+
 
 
 #ifndef _AFX_NO_OLE_SUPPORT
