@@ -101,8 +101,8 @@ void ModiAuswahl::OnBnClickedbuok()
 		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
 
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
-			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
-
+			//std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			int a;
 			/*while (myfile >> a)
 			{
@@ -119,67 +119,13 @@ void ModiAuswahl::OnBnClickedbuok()
 
 		}
 		if (!tastegedrueckt) {
-			PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
-			CSemesterProjektTest1App::gesicherBerechtigt++;
-		}
-		
-	/*	const int C = 261;
-		const int Cis = 277;
-		const int D = 293;
-		const int Dis = 311;
-		const int E = 329;
-		const int F = 349;
-		const int Fis = 369;
-		const int G = 391;
-		const int Gis = 415;
-		const int A = 440;
-		const int Ais = 466;
-		const int H = 493;
-		const int Takt = 1700;
+			//PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
+			
 
-		Beep(E * 2, Takt / 4);
-		Beep(H * 1, Takt / 8);
-		Beep(C * 2, Takt / 8);
-		Beep(D * 2, Takt / 4);
-		Beep(C * 2, Takt / 8);
-		Beep(H * 1, Takt / 8);
-		Beep(A * 1, Takt / 4);
-		Beep(A * 1, Takt / 8);
-		Beep(C * 2, Takt / 8);
-		Beep(E * 2, Takt / 8);
-		Beep(E * 2, Takt / 8);
-		Beep(D * 2, Takt / 8);
-		Beep(C * 2, Takt / 8);
-		Beep(H * 1, Takt / 2.5);
-		Beep(C * 2, Takt / 8);
-		Beep(D * 2, Takt / 4);
-		Beep(E * 2, Takt / 4);
-		Beep(C * 2, Takt / 4);
-		Beep(A * 1, Takt / 4);
-		Beep(A * 1, Takt / 4);
-		Sleep(Takt / (8 / 3));
-		Beep(D * 2, Takt / 3.25);
-		Beep(F * 2, Takt / 8);
-		Beep(A * 2, Takt / 8);
-		Beep(A * 2, Takt / 8);
-		Beep(G * 2, Takt / 8);
-		Beep(F * 2, Takt / 8);
-		Beep(E * 2, Takt / 3);
-		Beep(C * 2, Takt / 8);
-		Beep(E * 2, Takt / 8);
-		Beep(E * 2, Takt / 8);
-		Beep(D * 2, Takt / 8);
-		Beep(C * 2, Takt / 8);
-		Beep(H * 1, Takt / 4);
-		Beep(H * 1, Takt / 8);
-		Beep(C * 2, Takt / 8);
-		Beep(D * 2, Takt / 4);
-		Beep(E * 2, Takt / 4);
-		Beep(C * 2, Takt / 4);
-		Beep(A * 1, Takt / 4);
-		Beep(A * 1, Takt / 4);
-*/
-		
+			PlaySound(L"C:\\Users\\HFU_P\\Source\\Repos\\MultiTouchGUI\\SemesterProjektTest1\\res\\hund.wav", NULL,SND_ASYNC);
+			CSemesterProjektTest1App::gesicherBerechtigt++;
+
+		}
 	}
 	if (rbModusV == 2) {
 		//window2 w;
@@ -196,9 +142,9 @@ void ModiAuswahl::OnBnClickedbuok()
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
 			
 			
-			//std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
-			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			//std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);//jessi
 			int a;
 			/*while (myfile >> a)
 			{
