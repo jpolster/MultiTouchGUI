@@ -2,14 +2,14 @@
 
 
 // window2-Dialogfeld
-#include "SecureOverlay.h"
+
 
 class window2 : public CDialogEx
 {
 	DECLARE_DYNAMIC(window2)
 
 public:
-	CSecureOverlay objSecureOverlay;
+
 	window2(CWnd* pParent = NULL);   // Standardkonstruktor
 	virtual ~window2();
 

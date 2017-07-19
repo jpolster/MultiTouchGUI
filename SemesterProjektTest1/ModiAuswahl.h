@@ -1,8 +1,7 @@
 #pragma once
 
 
-// ModiAuswahl-Dialogfeld
-#include "SecureOverlay.h"
+
 #include <sstream> 
 
 class ModiAuswahl : public CDialog 

@@ -8,9 +8,8 @@
 #include <iostream>
 #include "Windows.h"
 #include "window2.h"
-#include "SemesterProjektTest1Dlg.h"
-#include "HalbSicherDlg.h"
-#include "OverlayDlg.h"
+
+
 #include <fstream>
 #include <sstream> 
 #include <string>

@@ -188,24 +188,16 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HalbSicherDlg.h" />
     <ClInclude Include="ModiAuswahl.h" />
-    <ClInclude Include="OverlayDlg.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="SecureOverlay.h" />
     <ClInclude Include="SemesterProjektTest1.h" />
-    <ClInclude Include="SemesterProjektTest1Dlg.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="window2.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HalbSicherDlg.cpp" />
     <ClCompile Include="ModiAuswahl.cpp" />
-    <ClCompile Include="OverlayDlg.cpp" />
-    <ClCompile Include="SecureOverlay.cpp" />
     <ClCompile Include="SemesterProjektTest1.cpp" />
-    <ClCompile Include="SemesterProjektTest1Dlg.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

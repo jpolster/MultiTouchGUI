@@ -21,9 +21,6 @@
     <ClInclude Include="SemesterProjektTest1.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="SemesterProjektTest1Dlg.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -39,15 +36,6 @@
     <ClInclude Include="ModiAuswahl.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="HalbSicherDlg.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="OverlayDlg.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="SecureOverlay.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SemesterProjektTest1.cpp">
@@ -60,18 +48,6 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="ModiAuswahl.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="HalbSicherDlg.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="SemesterProjektTest1Dlg.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="OverlayDlg.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
-    <ClCompile Include="SecureOverlay.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

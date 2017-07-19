@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include "SemesterProjektTest1.h"
-#include "SemesterProjektTest1Dlg.h"
+
 #include "ModiAuswahl.h"
 
 #ifdef _DEBUG
@@ -14,11 +14,11 @@
 
 // CSemesterProjektTest1App
 
-int CSemesterProjektTest1App::gesicherBerechtigt;
-CFont CSemesterProjektTest1App::font;
+int CSemesterProjektTest1App::gesicherBerechtigt; //Anzahl der berechtigten Gesichter
+CFont CSemesterProjektTest1App::font;  //Schrift für Overlay
 
-//CSemesterProjektTest1Dlg dlg;
-ModiAuswahl CSemesterProjektTest1App::dlg;
+
+ModiAuswahl CSemesterProjektTest1App::dlg; // Fenster zur Modusauswahl
 
 BEGIN_MESSAGE_MAP(CSemesterProjektTest1App, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
@@ -28,7 +28,7 @@ END_MESSAGE_MAP()
 // CSemesterProjektTest1App-Erstellung
 
 CSemesterProjektTest1App::CSemesterProjektTest1App()
-{
+{ //Schrift für Overlay
 	font.CreateFontW(20,            // nHeight
 		0,                         // nWidth
 		0,                         // nEscapement
@@ -42,11 +42,10 @@ CSemesterProjektTest1App::CSemesterProjektTest1App()
 		CLIP_DEFAULT_PRECIS,       // nClipPrecision
 		DEFAULT_QUALITY,           // nQuality
 		DEFAULT_PITCH | FF_SWISS,  // nPitchAndFamily
-		_T("Arial"));                 // lpszFacename
-	// Neustart-Manager unterstützen
+		_T("Arial"));               // lpszFacename
+									// Neustart-Manager unterstützen
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
-	// TODO: Hier Code zur Konstruktion einfügen
-	// Alle wichtigen Initialisierungen in InitInstance positionieren
+	
 }
 
 
@@ -59,7 +58,7 @@ CSemesterProjektTest1App theApp;
 
 BOOL CSemesterProjektTest1App::InitInstance()
 {	
-	gesicherBerechtigt = 1;
+	gesicherBerechtigt = 1;  //Voreinstellung der berechtigten Gesichter beim ersten Start (erweiterbar)
 	AfxOleInit();
 	// InitCommonControlsEx() ist für Windows XP erforderlich, wenn ein Anwendungsmanifest
 	// die Verwendung von ComCtl32.dll Version 6 oder höher zum Aktivieren
@@ -92,11 +91,9 @@ BOOL CSemesterProjektTest1App::InitInstance()
 	// z.B. zum Namen Ihrer Firma oder Organisation.
 	SetRegistryKey(_T("Vom lokalen Anwendungs-Assistenten generierte Anwendungen"));
 
-	
+	//Fenster "Modusauswahl" wird geöffnet
 	m_pMainWnd = &dlg;
-	//dlg.rbModusV = 0; // or 0,1, or 2
-	
-	INT_PTR nResponse = dlg.DoModal();
+	INT_PTR nResponse = dlg.DoModal();  
 
 	if (nResponse == IDOK)
 	{
