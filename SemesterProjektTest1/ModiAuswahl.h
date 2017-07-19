@@ -9,7 +9,8 @@ class ModiAuswahl : public CDialog
 	DECLARE_DYNAMIC(ModiAuswahl)
 
 public:
-	int rbModusV;
+	int rbModusV;  // Modus -> 0=Öffentlich; 1= Halbsicher; 2=Privat
+
 	ModiAuswahl(CWnd* pParent = NULL);   // Standardkonstruktor
 	virtual ~ModiAuswahl();
 

@@ -29,7 +29,7 @@ public:
 	void OnPaint();
 	afx_msg void OnBnClickedOk();
 	HBRUSH OnCtlColor(CDC * pDC, CWnd * pWnd, UINT nCtlColor);
-	//HBRUSH CtlColor(CDC * pDC, UINT nCtlColor);
+	
 private:
 	CBitmap myBitMap;
 };

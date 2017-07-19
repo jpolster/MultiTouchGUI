@@ -16,16 +16,15 @@
 
 
 // ModiAuswahl-Dialogfeld
-//int rbModusV;
 IMPLEMENT_DYNAMIC(ModiAuswahl, CDialog)
 
 
 
 
 ModiAuswahl::ModiAuswahl(CWnd* pParent /*=NULL*/)
-	: CDialog(modiWahl, pParent), rbModusV(0)
+	: CDialog(modiWahl, pParent), rbModusV(0)  //Modus zunächst auf "Öffentlich"
 {
-	std::cout << "KonstruktorTest" << std::endl;
+	
 }
 
 ModiAuswahl::~ModiAuswahl()
@@ -33,22 +32,9 @@ ModiAuswahl::~ModiAuswahl()
 }
 BOOL ModiAuswahl::OnInitDialog() {
 	CDialog::OnInitDialog();
-	//SetDlgItemText(, "Desired Text String");
+
 	CButton* pButton2;
-	//
-	//CEdit* ediit;
-	//ediit = (CEdit*)this->GetDlgItem(brGesichterED);
-
-	//std::stringstream s;// string Stream erzeugen 
-	//s << CSemesterProjektTest1App::gesicherBerechtigt;//
-	//std::string ss = s.str;
-
-	////LPTSTR lpsz = new TCHAR[ss.length + 1];
-	//
-	//
-
-	//SetDlgItemTextW(brGesichterED, 7);
-	pButton2 = (CButton*)this->GetDlgItem(rbOeffentlich);
+	pButton2 = (CButton*)this->GetDlgItem(rbOeffentlich);  
 	pButton2->SetFocus();
 	pButton2->SetCheck(true);
 	return true;
@@ -58,13 +44,7 @@ void ModiAuswahl::DoDataExchange(CDataExchange* pDX)
 {	
 	CDialog::DoDataExchange(pDX);
 	DDX_Radio(pDX, rbOeffentlich, rbModusV);  // <<--- Note
-	//SetDlgItemText(brGesichterED, "HI");
-	//ModiAuswahl dlg;
-	//rbModusV = 1; // or 0,1, or 2
-	//int nResp = this->DoModal();
-	//if (nResp == rbOeffentlich) {
-	//	MessageBeep(true);
-	//}
+	
 }
 
 
@@ -93,40 +73,32 @@ void ModiAuswahl::OnBnClickedbuok()
 	
 	
 	
-	if (rbModusV == 0) {
+	if (rbModusV == 0) {  //Öffentlicher Modus
 		//OnCancel();
 		ShowWindow(SW_MINIMIZE);
 	}
-	while (rbModusV == 1) {
+	while (rbModusV == 1) { //Halbsicherer Modus
 
 		ShowWindow(SW_MINIMIZE);
-		/*while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
-			if (OpenClipboard())
-			{
-				HANDLE hData = GetClipboardData(CF_TEXT);
+		
 
-				char * buffer = (char*)GlobalLock(hData);
-				fromClipboard = buffer;
-				GlobalUnlock(hData);
-				CloseClipboard();
-				gesichter = atoi(buffer);
-			}
-
-		}*/
+		// Anzahl der Gesichter wird ständig aus einer Datei ausgelesen
+		// solange sie unter der Anzahl der berechtigten Gesichter ist, passiert nichts
+		// ansonsten wird eine wav-Datei abgespielt (hier Hundebellen), um den User zu warnen
 
 		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
+			// jenachdem, auf welchem Rechner das läuft, muss man den Dateipfad der Datei, in der die Anzahl der Gesichter
+			// ausgelesen werden, anpassen
+
 
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
 			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			//std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			int a;
-			/*while (myfile >> a)
-			{
-				gesichter = a;
-			}*/
+			
 
-			myfile >> gesichter;
-			if (GetAsyncKeyState(VK_F7) & 0x8000) {
+			myfile >> gesichter;  //auslesen aus Datei
+			if (GetAsyncKeyState(VK_F7) & 0x8000) {  // mit "F7" kommt man wieder  zur Modusauswahl
 				
 				rbModusV = 0;
 				tastegedrueckt = true;
@@ -135,39 +107,34 @@ void ModiAuswahl::OnBnClickedbuok()
 
 		}
 		if (!tastegedrueckt) {
-			PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
-			
+			// jenachdem, auf welchem Rechner das läuft, muss man den Dateipfad der wav-Datei anpassen
 
+			PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
 			//PlaySound(L"C:\\Users\\HFU_P\\Source\\Repos\\MultiTouchGUI\\SemesterProjektTest1\\res\\hund.wav", NULL,SND_ASYNC);
-			CSemesterProjektTest1App::gesicherBerechtigt++;
+			
+			CSemesterProjektTest1App::gesicherBerechtigt++; // nach dem "Warnsignal" wird die Anzahl der berechtigten Gesichter automatisch hochgezählt
 
 		}
 	}
-	if (rbModusV == 2) {
-		//window2 w;
-		//CSemesterProjektTest1Dlg w;
-		//w.DoModal();
+	if (rbModusV == 2) { //Privater Modus
 		ShowWindow(SW_MINIMIZE);
-		/*int i = 0;
-		while (i < 4) {
-			i++;
-			Sleep(1000);
-		}*/
+
+		// Anzahl der Gesichter wird ständig aus einer Datei ausgelesen
+		// solange sie unter der Anzahl der berechtigten Gesichter ist, passiert nichts
+		// ansonsten sperrt ein Overlay den Bildschirm
+
 		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
 
-			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
-			
-			
+			// jenachdem, auf welchem Rechner das läuft, muss man den Dateipfad der Datei, in der die Anzahl der Gesichter
+			// ausgelesen werden, anpassen
+
 			//std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
 			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);//jessi
 			int a;
-			/*while (myfile >> a)
-			{
-				gesichter = a;
-			}*/
-			myfile >> gesichter;
-			if (GetAsyncKeyState(VK_F7) & 0x8000) {
+			
+			myfile >> gesichter;  //auslesen der Datei
+			if (GetAsyncKeyState(VK_F7) & 0x8000) {  // mit "F7" kommt man wieder  zur Modusauswahl
 				
 				rbModusV = 0;
 				tastegedrueckt = true;
@@ -175,6 +142,7 @@ void ModiAuswahl::OnBnClickedbuok()
 			}
 		}
 		if (!tastegedrueckt) {
+			// das Overlay wird geöffnet
 			Overlay w;
 			w.DoModal();
 		}

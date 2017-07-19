@@ -14,7 +14,7 @@
 
 // CSemesterProjektTest1App:
 // Siehe SemesterProjektTest1.cpp für die Implementierung dieser Klasse
-//
+
 
 class CSemesterProjektTest1App : public CWinApp
 {

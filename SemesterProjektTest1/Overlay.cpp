@@ -39,18 +39,16 @@ void Overlay::DoDataExchange(CDataExchange* pDX)
 
 BOOL Overlay::OnInitDialog() {
 
-	
+	// Bitmap als Hintergrund
 	objSecureOverlay.SubclassWindow(m_hWnd);
 	objSecureOverlay.m_nMessageHandler = CSecureOverlay::BackGroundPaint;
-	objSecureOverlay.Load((LPCTSTR) "res\\bmp01.bmp");
+	objSecureOverlay.Load((LPCTSTR) "res\\bmp01.bmp");  
 	
 	
 	
-	ShowWindow(SW_MAXIMIZE);
+	ShowWindow(SW_MAXIMIZE); // um den kompletten Bildschirm zu sperren
 	
 	OnSize(SW_MAXIMIZE, 10, 10);
-	
-
 	GetDlgItem(IDC_STATIC)->SetFont(&CSemesterProjektTest1App::font, TRUE);
 	
 	return true;
@@ -68,9 +66,10 @@ BEGIN_MESSAGE_MAP(Overlay, CDialog)
 END_MESSAGE_MAP()
 
 
-// window2-Meldungshandler
+// Overlay-Meldungshandler
 
 
+// Wird "Zurück" gedrückt, kommt man wieder zur Modiauswahl
 void Overlay::OnBnClickedBack()
 {	
 	EndDialog(IDBACK);
@@ -83,14 +82,13 @@ void Overlay::OnSize(UINT nType, int cx, int cy)
 {
 	
 	GetDlgItem(IDC_STATIC)->MoveWindow(350, 850, 1000, 120);
-
 	GetDlgItem(IDBACK)->MoveWindow(1500, 875,100, 50);
 	GetDlgItem(IDC_BUTTON1)->MoveWindow(1400, 875, 50, 50);
 }
 
 void Overlay::OnBnClickedOk()
 {
-	// TODO: Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
+	// Wird "OK" gedückt wird die Anzahl der berechtigten Gesichter hochgezählt, der User genehmigt also noch ein Gesicht
 	CSemesterProjektTest1App::gesicherBerechtigt++;
 	EndDialog(IDC_BUTTON1);
 }
