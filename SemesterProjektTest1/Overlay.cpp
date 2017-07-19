@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "SemesterProjektTest1.h"
-#include "window2.h"
+#include "Overlay.h"
 #include "afxdialogex.h"
 #include "SecureOverlay.h"
 #include "atlwin.h"
@@ -14,12 +14,12 @@
 // window2-Dialogfeld
 
 
-IMPLEMENT_DYNAMIC(window2, CDialogEx)
+IMPLEMENT_DYNAMIC(Overlay, CDialogEx)
 
 
 
 
-window2::window2(CWnd* pParent /*=NULL*/)
+Overlay::Overlay(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_WINDOW2, pParent)
 {
 	
@@ -28,16 +28,16 @@ window2::window2(CWnd* pParent /*=NULL*/)
 
 }
 
-window2::~window2()
+Overlay::~Overlay()
 {
 }
 
-void window2::DoDataExchange(CDataExchange* pDX)
+void Overlay::DoDataExchange(CDataExchange* pDX)
 {
 	
 }
 
-BOOL window2::OnInitDialog() {
+BOOL Overlay::OnInitDialog() {
 
 	
 	objSecureOverlay.SubclassWindow(m_hWnd);
@@ -56,22 +56,22 @@ BOOL window2::OnInitDialog() {
 	return true;
 }
 
-void window2::OnPaint()
+void Overlay::OnPaint()
 {
 }
 
-BEGIN_MESSAGE_MAP(window2, CDialog)
+BEGIN_MESSAGE_MAP(Overlay, CDialog)
 	ON_WM_CTLCOLOR()
 	ON_BN_CLICKED(IDBACK, &OnBnClickedBack)
 	ON_BN_CLICKED(IDOK, &OnBnClickedOk)
-	ON_BN_CLICKED(IDC_BUTTON1, &window2::OnBnClickedOk)
+	ON_BN_CLICKED(IDC_BUTTON1, &Overlay::OnBnClickedOk)
 END_MESSAGE_MAP()
 
 
 // window2-Meldungshandler
 
 
-void window2::OnBnClickedBack()
+void Overlay::OnBnClickedBack()
 {	
 	EndDialog(IDBACK);
 	//CSemesterProjektTest1App::dlg.ShowWindow;
@@ -79,7 +79,7 @@ void window2::OnBnClickedBack()
 }
 
 
-void window2::OnSize(UINT nType, int cx, int cy)
+void Overlay::OnSize(UINT nType, int cx, int cy)
 {
 	
 	GetDlgItem(IDC_STATIC)->MoveWindow(350, 850, 1000, 120);
@@ -88,14 +88,14 @@ void window2::OnSize(UINT nType, int cx, int cy)
 	GetDlgItem(IDC_BUTTON1)->MoveWindow(1400, 875, 50, 50);
 }
 
-void window2::OnBnClickedOk()
+void Overlay::OnBnClickedOk()
 {
 	// TODO: Fügen Sie hier Ihren Handlercode für Benachrichtigungen des Steuerelements ein.
 	CSemesterProjektTest1App::gesicherBerechtigt++;
 	EndDialog(IDC_BUTTON1);
 }
 
-HBRUSH window2::OnCtlColor(CDC* pDC, CWnd* pWnd,UINT nCtlColor)
+HBRUSH Overlay::OnCtlColor(CDC* pDC, CWnd* pWnd,UINT nCtlColor)
 {
 	HBRUSH hbr = CDialog::OnCtlColor(pDC, pWnd, nCtlColor);
 	CBrush m_brush = m_brush.CreateStockObject(HOLLOW_BRUSH);

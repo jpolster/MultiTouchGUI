@@ -194,7 +194,7 @@
     <ClInclude Include="SemesterProjektTest1.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="window2.h" />
+    <ClInclude Include="Overlay.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ModiAuswahl.cpp" />
@@ -206,7 +206,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="window2.cpp" />
+    <ClCompile Include="Overlay.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="SemesterProjektTest1.rc" />
@@ -215,12 +215,7 @@
     <None Include="res\SemesterProjektTest1.rc2" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\bitmap1.bmp" />
-    <Image Include="res\bitmap2.bmp" />
-    <Image Include="res\bitmap3.bmp" />
     <Image Include="res\bmp01.bmp" />
-    <Image Include="res\bmp00002.bmp" />
-    <Image Include="res\bmpRot.bmp" />
     <Image Include="res\SemesterProjektTest1.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

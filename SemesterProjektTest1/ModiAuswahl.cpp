@@ -7,7 +7,7 @@
 #include "afxdialogex.h"
 #include <iostream>
 #include "Windows.h"
-#include "window2.h"
+#include "Overlay.h"
 
 
 #include <fstream>
@@ -175,7 +175,7 @@ void ModiAuswahl::OnBnClickedbuok()
 			}
 		}
 		if (!tastegedrueckt) {
-			window2 w;
+			Overlay w;
 			w.DoModal();
 		}
 	}

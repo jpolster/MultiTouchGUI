@@ -4,14 +4,14 @@
 // window2-Dialogfeld
 #include "SecureOverlay.h"
 
-class window2 : public CDialogEx
+class Overlay : public CDialogEx
 {
-	DECLARE_DYNAMIC(window2)
+	DECLARE_DYNAMIC(Overlay)
 
 public:
 	CSecureOverlay objSecureOverlay;
-	window2(CWnd* pParent = NULL);   // Standardkonstruktor
-	virtual ~window2();
+	Overlay(CWnd* pParent = NULL);   // Standardkonstruktor
+	virtual ~Overlay();
 
 	// Dialogfelddaten
 #ifdef AFX_DESIGN_TIME

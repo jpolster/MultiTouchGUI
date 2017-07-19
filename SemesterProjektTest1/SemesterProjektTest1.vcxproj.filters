@@ -30,13 +30,13 @@
     <ClInclude Include="Resource.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="window2.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="ModiAuswahl.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="SecureOverlay.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Overlay.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,13 +47,13 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="window2.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="ModiAuswahl.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="SecureOverlay.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Overlay.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -69,21 +69,6 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\SemesterProjektTest1.ico">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
-    <Image Include="res\bitmap1.bmp">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
-    <Image Include="res\bitmap2.bmp">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
-    <Image Include="res\bitmap3.bmp">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
-    <Image Include="res\bmp00002.bmp">
-      <Filter>Ressourcendateien</Filter>
-    </Image>
-    <Image Include="res\bmpRot.bmp">
       <Filter>Ressourcendateien</Filter>
     </Image>
     <Image Include="res\bmp01.bmp">
