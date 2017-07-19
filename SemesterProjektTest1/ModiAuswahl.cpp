@@ -12,11 +12,14 @@
 #include "HalbSicherDlg.h"
 #include "OverlayDlg.h"
 #include <fstream>
+#include <sstream> 
+#include <string>
 
 
 // ModiAuswahl-Dialogfeld
 //int rbModusV;
 IMPLEMENT_DYNAMIC(ModiAuswahl, CDialog)
+
 
 
 
@@ -31,7 +34,21 @@ ModiAuswahl::~ModiAuswahl()
 }
 BOOL ModiAuswahl::OnInitDialog() {
 	CDialog::OnInitDialog();
+	//SetDlgItemText(, "Desired Text String");
 	CButton* pButton2;
+	//
+	//CEdit* ediit;
+	//ediit = (CEdit*)this->GetDlgItem(brGesichterED);
+
+	//std::stringstream s;// string Stream erzeugen 
+	//s << CSemesterProjektTest1App::gesicherBerechtigt;//
+	//std::string ss = s.str;
+
+	////LPTSTR lpsz = new TCHAR[ss.length + 1];
+	//
+	//
+
+	//SetDlgItemTextW(brGesichterED, 7);
 	pButton2 = (CButton*)this->GetDlgItem(rbOeffentlich);
 	pButton2->SetFocus();
 	pButton2->SetCheck(true);
@@ -42,7 +59,7 @@ void ModiAuswahl::DoDataExchange(CDataExchange* pDX)
 {	
 	CDialog::DoDataExchange(pDX);
 	DDX_Radio(pDX, rbOeffentlich, rbModusV);  // <<--- Note
-	
+	//SetDlgItemText(brGesichterED, "HI");
 	//ModiAuswahl dlg;
 	//rbModusV = 1; // or 0,1, or 2
 	//int nResp = this->DoModal();
@@ -101,8 +118,8 @@ void ModiAuswahl::OnBnClickedbuok()
 		while (gesichter <= CSemesterProjektTest1App::gesicherBerechtigt) {
 
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
-			//std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
-			std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			//std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			int a;
 			/*while (myfile >> a)
 			{
@@ -119,10 +136,10 @@ void ModiAuswahl::OnBnClickedbuok()
 
 		}
 		if (!tastegedrueckt) {
-			//PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
+			PlaySound(L"C:\\Users\\Jessi\\Source\\Repos\\MultiTouch_Reich\\SemesterProjektTest1\\res\\hund.wav", NULL, SND_ASYNC);
 			
 
-			PlaySound(L"C:\\Users\\HFU_P\\Source\\Repos\\MultiTouchGUI\\SemesterProjektTest1\\res\\hund.wav", NULL,SND_ASYNC);
+			//PlaySound(L"C:\\Users\\HFU_P\\Source\\Repos\\MultiTouchGUI\\SemesterProjektTest1\\res\\hund.wav", NULL,SND_ASYNC);
 			CSemesterProjektTest1App::gesicherBerechtigt++;
 
 		}
@@ -142,9 +159,9 @@ void ModiAuswahl::OnBnClickedbuok()
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
 			
 			
-			std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
+			//std::fstream myfile("C:\\Users\\HFU_P\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);
 			//std::fstream myfile("C:\\Users\\mail\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\temp.txt", std::ios_base::in);
-			//std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);//jessi
+			std::fstream myfile("C:\\Users\\Jessi\\AppData\\Local\\Packages\\Microsoft.SDKSamples.FaceTracking.CPP_8wekyb3d8bbwe\\LocalState\\faces.txt", std::ios_base::in);//jessi
 			int a;
 			/*while (myfile >> a)
 			{

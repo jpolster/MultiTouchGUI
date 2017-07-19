@@ -15,6 +15,7 @@
 // CSemesterProjektTest1App
 
 int CSemesterProjektTest1App::gesicherBerechtigt;
+CFont CSemesterProjektTest1App::font;
 
 //CSemesterProjektTest1Dlg dlg;
 ModiAuswahl CSemesterProjektTest1App::dlg;
@@ -28,6 +29,20 @@ END_MESSAGE_MAP()
 
 CSemesterProjektTest1App::CSemesterProjektTest1App()
 {
+	font.CreateFontW(20,            // nHeight
+		0,                         // nWidth
+		0,                         // nEscapement
+		0,                         // nOrientation
+		FW_NORMAL,                 // nWeight
+		FALSE,                     // bItalic
+		FALSE,                     // bUnderline
+		0,                         // cStrikeOut
+		ANSI_CHARSET,              // nCharSet
+		OUT_DEFAULT_PRECIS,        // nOutPrecision
+		CLIP_DEFAULT_PRECIS,       // nClipPrecision
+		DEFAULT_QUALITY,           // nQuality
+		DEFAULT_PITCH | FF_SWISS,  // nPitchAndFamily
+		_T("Arial"));                 // lpszFacename
 	// Neustart-Manager unterstützen
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
 	// TODO: Hier Code zur Konstruktion einfügen

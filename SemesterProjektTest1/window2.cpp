@@ -15,10 +15,16 @@
 
 IMPLEMENT_DYNAMIC(window2, CDialogEx)
 
+
+
+
 window2::window2(CWnd* pParent /*=NULL*/)
 	: CDialogEx(IDD_WINDOW2, pParent)
 {
+	
 	//this->SetBackgroundColor(50, 1);
+
+
 }
 
 window2::~window2()
@@ -27,15 +33,25 @@ window2::~window2()
 
 void window2::DoDataExchange(CDataExchange* pDX)
 {
+	
 }
 
 BOOL window2::OnInitDialog() {
+
+	
 	objSecureOverlay.SubclassWindow(m_hWnd);
 	objSecureOverlay.m_nMessageHandler = CSecureOverlay::BackGroundPaint;
 	objSecureOverlay.Load((LPCTSTR) "res\\bmp01.bmp");
 	
+	
+	
 	ShowWindow(SW_MAXIMIZE);
+	
 	OnSize(SW_MAXIMIZE, 10, 10);
+	
+
+	GetDlgItem(IDC_STATIC)->SetFont(&CSemesterProjektTest1App::font, TRUE);
+	
 	return true;
 }
 
@@ -63,8 +79,10 @@ void window2::OnBnClickedBack()
 
 
 void window2::OnSize(UINT nType, int cx, int cy)
-{	
+{
+	
 	GetDlgItem(IDC_STATIC)->MoveWindow(350, 850, 1000, 120);
+
 	GetDlgItem(IDBACK)->MoveWindow(1500, 875,100, 50);
 	GetDlgItem(IDC_BUTTON1)->MoveWindow(1400, 875, 50, 50);
 }
