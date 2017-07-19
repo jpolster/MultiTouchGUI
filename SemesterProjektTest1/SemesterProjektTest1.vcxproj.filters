@@ -36,6 +36,9 @@
     <ClInclude Include="ModiAuswahl.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="SecureOverlay.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SemesterProjektTest1.cpp">
@@ -48,6 +51,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="ModiAuswahl.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SecureOverlay.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

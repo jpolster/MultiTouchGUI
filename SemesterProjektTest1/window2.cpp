@@ -5,6 +5,7 @@
 #include "SemesterProjektTest1.h"
 #include "window2.h"
 #include "afxdialogex.h"
+#include "SecureOverlay.h"
 #include "atlwin.h"
 #include "Windows.h"
 #include <iostream>
